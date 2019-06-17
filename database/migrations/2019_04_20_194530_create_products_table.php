@@ -18,6 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->decimal('price', 8, 2);
             $table->string('upc')->unique();
+            $table->string('image');
             $table->timestamps();
         });
     }

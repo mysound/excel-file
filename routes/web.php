@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/products', 'ProductsController@index')->name('products');
 Route::get('/export', 'ProductsController@export')->name('export');
 Route::post('/import', 'ProductsController@import')->name('import');
+Route::get('/addimage', 'ProductsController@addimage')->name('addimage');

@@ -23,6 +23,7 @@ class ProductsExport implements FromCollection, WithHeadings
             'Title',
             'Price',
             'UPC',
+            'Image'
         ];
     }
 }

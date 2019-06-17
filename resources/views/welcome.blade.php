@@ -87,6 +87,7 @@
                 <div class="links">
                     <a href="{{ route('products') }}">All Products</a>
                     <a href="{{ route('export') }}">Export</a>
+                    <a href="{{ route('addimage') }}">Add Image</a>
                     <br>
                     <br>
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
