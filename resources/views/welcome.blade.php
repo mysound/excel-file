@@ -45,7 +45,7 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
             }
 
             .links > a {
@@ -64,7 +64,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center position-ref ">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -81,22 +81,52 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    eBay File
                 </div>
 
                 <div class="links">
                     <a href="{{ route('products') }}">All Products</a>
                     <a href="{{ route('export') }}">Export</a>
-                    <a href="{{ route('addimage') }}">Add Image</a>
+                    <a href="{{ route('addimage') }}">image</a>
                     <br>
                     <br>
                     <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="import_file">
+                        <label>SKU: <input type="text" name="brand"></label>
                         <input type="submit" value="Import">
                     </form>
                 </div>
             </div>
         </div>
+        <br><br>
+        @if($products->first())
+            <div class="flex-center">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Category</th>
+                            <th>UPC</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>SKU</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($products as $product)
+                            <tr>
+                                <td>{{ $product->id }}</td>
+                                <td>{{ $product->category }}</td>
+                                <td>{{ $product->upc }}</td>
+                                <td>{{ $product->title }}</td>
+                                <td>{{ $product->price }}</td>
+                                <td>{{ $product->sku }}</td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        @endif
     </body>
 </html>

@@ -71,6 +71,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'excel' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/excel'),
+            'url' => env('APP_URL').'/storage/excel',
+            'visibility' => 'public',
+        ],
+
         'thumbnails' => [
             'driver' => 'local',
             'root' => storage_path('app/public/images/thumbnails'),

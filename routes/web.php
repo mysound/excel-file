@@ -12,7 +12,9 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome', [
+    	'products' => App\Product::all()
+    ]);
 });
 
 Route::get('/products', 'ProductsController@index')->name('products');
